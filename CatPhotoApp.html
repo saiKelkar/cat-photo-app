@@ -6,11 +6,14 @@
     <title>CatPhotoApp</title>
   </head>
   <body>
+    <!--main tag helps indirectly with SEO-->
     <main>
       <h1>CatPhotoApp</h1>
+      <!--section tag helps to group related elements / contents together on a web page-->
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
+        <!--target="_blank" opens the link in a new tab-->
         <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
         <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
       </section>
@@ -22,6 +25,7 @@
           <li>laser pointers</li>
           <li>lasagna</li>
         </ul>
+        <!--figure tag is used to group contents together related to images, figcaption is used to give caption to the images-->
         <figure>
           <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate.">
           <figcaption>Cats <em>love</em> lasagna.</figcaption>  
@@ -39,18 +43,29 @@
       </section>
       <section>
         <h2>Cat Form</h2>
+        <!--action attribute in the form tag indicates where the form data should be sent-->
         <form action="https://freecatphotoapp.com/submit-cat-photo">
+          <!--fieldset is used to group input and label elements together-->
           <fieldset>
+            <!--legend tag is used to name or add a question related to the fieldset, for which people will choose either of the inputs-->
             <legend>Is your cat an indoor or outdoor cat?</legend>
+            <!--name attribute indicates under which name the input should be saved in-->
+            <!--label tag is used for assistive screen readers-->
+            <!--here name attribute is associated with indoor-outdoor as we want only one radio button to be checked and not both at the same time-->
+            <!--form data of a button is based on name and value attributes, if Indoor is clicked on, in our place where form input is saved, 
+            it'll show indoor-outdoor=on which isn't helpful, hence we add a value attribute whose value is same as their id's-->
             <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
             <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
+            <!--for attribute of label tag is used to create a link between the label tag and the input tag-->
             <input id="loving" type="checkbox" name="personality" value="loving" checked> <label for="loving">Loving</label>
             <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
             <input id="energetic" type="checkbox" name="personality" value="energetic"> <label for="energetic">Energetic</label>
           </fieldset>
+          <!--required attribute indicates that it is mandatory for the user to add to the field before submitting the form-->
+          <!--input tag is an inline element, so input button will appear on the same line-->
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
